@@ -24,13 +24,22 @@ const schema = mongoose.Schema({
         type : Number,
         default : 0,
     },
+    reportUserName: {
+        type : [String],
+    },
+    likes : {
+        type : Number,
+        default : 0
+    },
+    likeUserName : {
+        type : [String],
+    },
     user : {
         type : mongoose.Schema.Types.ObjectId,
         ref : 'user'
     },
-    comment : {
-        type : mongoose.Schema.Types.ObjectId,
-        ref : 'user'
+    comments : {
+        type : [Object],
     },
     createdAt : {
         type : Date,

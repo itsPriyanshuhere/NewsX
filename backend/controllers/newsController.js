@@ -21,7 +21,6 @@ export const createNewsPost = async (req,res) => {
           );
         res.status(201).json({
             success:true,
-            news,
             addInUser
         });
     }catch(error) {
