@@ -2,8 +2,6 @@ import { comparePassword, hashPassword } from "../helper/authHelper.js";
 import userModel from "../models/userModel.js";
 import JWT from "jsonwebtoken";
 
-// const JWT_SECRET = "SDEIH29ddwieh%*&4@*@jcfo29JDDWJ";
-
 export const registerUser = async (req,res) => {
     try {
         const {name,email,password,answer} = req.body;
