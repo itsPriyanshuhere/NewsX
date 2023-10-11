@@ -15,7 +15,7 @@ export default {
           5: "#B69568", 
           6: "#8D785F",
         },
-        custom: "#d9d2c0",
+        custom: "#191919",
       },
       fontFamily: {
         robotoMono: ['Roboto Mono', 'sans-serif'],
