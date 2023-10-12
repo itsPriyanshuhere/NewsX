@@ -98,3 +98,19 @@ export const loginUser = async (req,res) => {
         });
     }
 };
+
+export const getUserProfile = async (req,res) => {
+    try {
+        const userId = await userModel.findById(req.user._id);
+        res.status(200).json({
+            success:true,
+            userId,
+        });
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message: "Failed to fetch user detials",
+            error,
+        });
+    }
+};
