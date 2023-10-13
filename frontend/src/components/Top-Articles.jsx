@@ -17,11 +17,11 @@ const Headlines = () => {
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter="20px">
           {ans.map((headline, index) => (
-            <div key={index} className="masonry-item">
+            <div key={index} className="masonry-item ">
               <a href={headline.url} target="_blank" rel="noopener noreferrer">
-                <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="bg-white p-4 rounded-lg shadow-md ">
                   <div
-                    className="bg-cover bg-center h-64 w-full rounded-lg mb-4"
+                    className="bg-cover bg-center h-64 w-full rounded-lg mb-4 "
                     style={{
                       backgroundImage: `url(${headline.image})`,
                     }}
