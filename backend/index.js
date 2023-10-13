@@ -1,5 +1,5 @@
 import express from 'express';
-// import axios from 'axios';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from "dotenv";
 import userRoute from "./routes/userRoute.js";
@@ -10,6 +10,16 @@ const app = express();
 dotenv.config({
     path:"./config/config.env",
 });
+
+const allowedOrigins = [
+  'http://127.0.0.1:5173',
+  'http://localhost:5173'
+];
+
+app.use(cors({
+  origin:allowedOrigins,
+  credentials:true,
+}));
 
 main().catch(err => console.log(err));
 
