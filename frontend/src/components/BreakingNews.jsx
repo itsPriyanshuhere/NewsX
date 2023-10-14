@@ -11,37 +11,37 @@ import { Autoplay, Pagination} from 'swiper/modules';
 
 const BreakingNews = () => {
 
-    // const [headlines,setHeadlines] = useState([]);
+    const [headlines,setHeadlines] = useState([]);
 
-    const headlines = [
-        {
-            uuid : 1,
-            image_url: "https://media-manager.noticiasaominuto.com/1920/naom_63569d26b3436.jpg",
-            title : "World Cup Match Between India and Pakistan",
-            description : "India is 7-0 up in world cups against Pakistan"
-        },
-        {
-            uuid : 2,
-            image_url: "https://media-manager.noticiasaominuto.com/1920/naom_63569d26b3436.jpg",
-            title : "War between Isreal and Palastine",
-            description : "Isreal is fighting hard against Palastine attack"
-        },
-        {
-            uuid : 3,
-            image_url: "https://media-manager.noticiasaominuto.com/1920/naom_63569d26b3436.jpg",
-            title : "India Become world leader",
-            description : "The world claims that india is the new world leader"
-        },
-    ]
+    // const headlines = [
+    //     {
+    //         uuid : 1,
+    //         image_url: "https://media-manager.noticiasaominuto.com/1920/naom_63569d26b3436.jpg",
+    //         title : "World Cup Match Between India and Pakistan",
+    //         description : "India is 8-0 up in world cups against Pakistan"
+    //     },
+    //     {
+    //         uuid : 2,
+    //         image_url: "https://media-manager.noticiasaominuto.com/1920/naom_63569d26b3436.jpg",
+    //         title : "War between Isreal and Palastine",
+    //         description : "Isreal is fighting hard against Palastine attack"
+    //     },
+    //     {
+    //         uuid : 3,
+    //         image_url: "https://media-manager.noticiasaominuto.com/1920/naom_63569d26b3436.jpg",
+    //         title : "India Become world leader",
+    //         description : "The world claims that india is the new world leader"
+    //     },
+    // ]
 
     const getHeadlines = async () => {
         const res = await axios.get(`${server}/api/v1/headlines`);
         setHeadlines(res.data.data);
     }
 
-    // useEffect(()=>{
-    //     getHeadlines();
-    // },[]);
+    useEffect(()=>{
+        getHeadlines();
+    },[]);
 
 
   return (
@@ -49,7 +49,7 @@ const BreakingNews = () => {
         <div className='flex flex-row'>
             <div className='flex flex-col px-8 py-6'>
                 <h3 className='text-black text-4xl font-bold font-serif'>Breaking</h3>
-                <h3 className='text-black text-4xl font-bold font-serif'>News!</h3>
+                <h3 className='text-4xl font-bold font-serif text-red-500'>News!</h3>
             </div>
             <Swiper
             spaceBetween={30}
