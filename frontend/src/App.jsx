@@ -10,33 +10,8 @@ import NoMatch from "./components/NoMatch";
 import Navbar from "./containers/navbar";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import { useContext, useEffect } from "react";
-
-import { Context,server } from "./main";
-import axios from "axios";
 
 export default function App() {
-
-  const {user, setUser, setisAuthenticated} = useContext(Context);
-
-  useEffect( () => {
-
-    
-    axios.get(`${server}/api/v1/user`, {
-      withCredentials: true
-    }).then( (res) =>{
-      setUser(res.user);
-      setisAuthenticated(true);
-
-    }).catch((error) =>{
-      setUser({});
-      setisAuthenticated(false);
-
-    })
-
-  }, [])
-
-  // console.log("inside the app", user)
 
   return (
     <div className="bg-custom min-h-screen">
