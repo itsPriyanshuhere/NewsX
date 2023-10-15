@@ -1,26 +1,51 @@
-import React from 'react'
-import sports from "../assets/sports.jpeg";
+import sportsnew from '../assets/sportsnew.jpeg';
 
 const Category = () => {
   return (
-    <div className='p-16'>
-        <h2 className='text-4xl font-mono' >Top<span className='text-red-500 font-serif'> Categories!</span></h2>
-        <div className='grid grid-rows-3 grid-flow-col gap-4 grid-cols-3 p-4 mt-8 bg-white border rounded-2xl'>
-            <div className='row-span-3 col-span-1 border-solid border-2 border-black'>
-                <img src='https://1.bp.blogspot.com/-XytZocib4z0/YLMaERmm1pI/AAAAAAAAAPY/pekDltLa_sctsmkW301i78rmV8X7oSbEQCLcBGAsYHQ/s1101/6C837042-ABFC-4FA5-A8E3-278ADDA084B1.jpeg' className='object-fit h-full' />
+    <div className="p-16">
+      <h2 className="text-4xl font-serif text-gray-200 pt-0">
+        Top<span className="text-red-500"> Categories</span>
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mt-8">
+        {[
+          {
+            image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqeuAPkpP-NNW0_LN1say6pOY13P9UfuGZFw&usqp=CAU',
+            title: 'Category 1',
+          },
+          {
+            image:
+              'https://www.hindustantimes.com/ht-img/img/2023/06/28/1600x900/IMG-20230628-WA0001_1687930344914_1687930353678.jpg',
+            title: 'Category 2',
+          },
+          {
+            image: sportsnew,
+            title: 'Category 3',
+          },
+          {
+            image:
+              'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX11494090.jpg',
+            title: 'Category 4',
+          },
+        ].map((category, index) => (
+          <div
+            key={index}
+            className="relative overflow-hidden w-82 transform transition-transform duration-300 hover:scale-105 hover:rotate-1"
+          >
+            <img
+        src={category.image}
+        alt={category.title}
+        className="w-64 h-64 rounded-full border-4 border-red-500 shadow-lg"
+      />
+            <div className="absolute inset-0 flex flex-col justify-end">
+              <div className="bg-white p-4 text-black rounded-b-lg">
+                <h3 className="text-2xl font-bold">{category.title}</h3>
+              </div>
             </div>
-            <div className='col-span-2 border-solid border-2 border-black'>
-                <img src='https://doortofuture.com/wp-content/uploads/2021/08/Education.jpg' className='object-fit h-48 w-full' />
-            </div>
-            <div className='row-span-2 col-span-1 border-solid border-2 border-black'>
-                <img src={sports} className='object-fit h-full' />
-            </div>
-            <div className='row-span-2 col-span-1 border-solid border-2 border-black'>
-                <img src='https://www.punekarnews.in/wp-content/uploads/2022/03/Politics.jpg' className='object-cover h-full' />
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Category
+export default Category;

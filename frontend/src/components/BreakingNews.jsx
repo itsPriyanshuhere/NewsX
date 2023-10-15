@@ -24,7 +24,7 @@ const BreakingNews = () => {
 
 
   return (
-    <div className='w-full bg-white h-32'>
+    <div className='w-full bg-white h-28'>
         <div className='flex flex-row'>
             <div className='flex flex-col px-8 py-6'>
                 <h3 className='text-black text-4xl font-bold font-serif'>Breaking</h3>
