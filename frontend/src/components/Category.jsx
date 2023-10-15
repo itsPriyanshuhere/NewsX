@@ -1,8 +1,9 @@
 import React from 'react'
+import sports from "../assets/sports.jpeg";
 
 const Category = () => {
   return (
-    <div className='p-12'>
+    <div className='p-16'>
         <h2 className='text-4xl font-mono' >Top<span className='text-red-500 font-serif'> Categories!</span></h2>
         <div className='grid grid-rows-3 grid-flow-col gap-4 grid-cols-3 p-4 mt-8 bg-white border rounded-2xl'>
             <div className='row-span-3 col-span-1 border-solid border-2 border-black'>
@@ -12,7 +13,7 @@ const Category = () => {
                 <img src='https://doortofuture.com/wp-content/uploads/2021/08/Education.jpg' className='object-fit h-48 w-full' />
             </div>
             <div className='row-span-2 col-span-1 border-solid border-2 border-black'>
-                <img src='https://images.news18.com/ibnkhabar/uploads/2022/08/Education-N18-34-1.jpg' className='object-fit h-full' />
+                <img src={sports} className='object-fit h-full' />
             </div>
             <div className='row-span-2 col-span-1 border-solid border-2 border-black'>
                 <img src='https://www.punekarnews.in/wp-content/uploads/2022/03/Politics.jpg' className='object-cover h-full' />

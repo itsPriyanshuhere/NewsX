@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import Home from "./components/Home";
 import Headlines from "./components/Top-Articles";
 import UserForum from "./components/UserForum";
@@ -10,6 +10,7 @@ import NoMatch from "./components/NoMatch";
 import Navbar from "./containers/navbar";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import DetailNewsByUser from "./components/DetailNewsByUser";
 
 export default function App() {
 
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/userforum" element={<UserForum />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/newpost" element={<NewPost />} />
+        <Route path="/user-news/:id" element={<DetailNewsByUser />} />
         <Route path='/sign-in' element={<SignIn />}></Route>
         <Route path='/sign-up' element={<SignUp />}></Route>
         <Route path="*" element={<NoMatch />} />

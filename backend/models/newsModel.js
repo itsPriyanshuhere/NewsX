@@ -14,8 +14,8 @@ const schema = mongoose.Schema({
         required : [true,"Please provide categary for your news article"]
     },
     photo : {
-        data: Buffer,
-        contentTpye : String,
+        type : String,
+        required : [true,"Please provide link for your image"]
     },
     source : {
         type : String

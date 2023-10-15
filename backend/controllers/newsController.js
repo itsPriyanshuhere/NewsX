@@ -4,15 +4,15 @@ import userModel from "../models/userModel.js";
 export const createNewsPost = async (req,res) => {
     try {
         //photo to be added
-        const {title,description,category,source} = req.body;
-        if(!title || !description || !category) {
+        const {title,description,category,source,photo} = req.body;
+        if(!title || !description || !category ||!photo) {
             return res.status(400).json({
                 success: false,
                 message : "Please provide complete details",
             });
         }
         const userId = await userModel.findById(req.user._id);
-        const news = await newsModel.create({title,description,category,source,user:userId});
+        const news = await newsModel.create({title,description,category,source,user:userId,photo});
         // const addInUser = await userModel.findByIdAndUpdate(req.user._id,{post:[...userId.post,news._id]},{new : true});
         const addInUser = await userModel.findByIdAndUpdate(
             req.user._id,
@@ -34,7 +34,7 @@ export const createNewsPost = async (req,res) => {
 
 export const getAllNews = async (req,res) => {
     try {
-        const news = await newsModel.find({});
+        const news = await newsModel.find({}).sort({createdAt:-1});
         res.status(200).json({
             success:true,
             news
