@@ -63,3 +63,20 @@ export const getUserNews = async (req,res) => {
         });
     }
 };
+
+export const getNewsDetails = async (req,res) => {
+    try{
+        const {id} = req.params;
+        const newsDetails = await newsModel.findById(id);
+        res.status(200).json({
+            success:true,
+            newsDetails
+        });
+    }catch(error) {
+        res.status(500).json({
+            success:false,
+            message : "Failed to fetch news details",
+            error
+        });
+    }
+};
