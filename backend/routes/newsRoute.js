@@ -11,5 +11,6 @@ router.get("/userpostednews",requireSignIn,getUserNews);
 router.post("/newsbyuser/:id",requireSignIn,postComment);
 router.get("/reportpost/:id",requireSignIn,reportController);
 router.get("/likepost/:id",requireSignIn,likeController);
+router.get("/newsdetails/:id",getNewsDetails);
 
 export default router;

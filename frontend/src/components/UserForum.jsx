@@ -17,9 +17,9 @@ const UserForum = () => {
     <div>
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter="20px">
-          {ans.map((newsPost, index) => (
+          {ans.map((newsPost) => (
             <Link to={`/user-news/${newsPost._id}`}>
-              <div key={index} className="masonry-item ">
+              <div key={newsPost._id}  className="masonry-item ">
                 <a href={newsPost.url} target="_blank" rel="noopener noreferrer">
                   <div className="bg-white p-4 rounded-lg shadow-md ">
                     <div
