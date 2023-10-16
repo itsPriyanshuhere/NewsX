@@ -136,7 +136,7 @@ if(isAuthenticated){
             </button>
             <p className="mb-0 mt-2 pt-5 text-sm font-semibold text-white">
               Already have an account? 
-              <Link to="/sign-in" className="text-primary"> LogIn</Link>
+              <Link to="/sign-in" className="text-primary underline"> LogIn</Link>
             </p>
           </div>
         </form>

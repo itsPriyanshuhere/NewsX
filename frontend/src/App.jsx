@@ -8,9 +8,9 @@ import Profile from "./components/Profile";
 import NewPost from "./components/NewPost";
 import NoMatch from "./components/NoMatch";
 import Navbar from "./containers/navbar";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
 import DetailNewsByUser from "./components/DetailNewsByUser";
+import Register from "./components/Register";
+import Login from "./components/Login";
 
 export default function App() {
 
@@ -23,9 +23,9 @@ export default function App() {
         <Route path="/userforum" element={<UserForum />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/newpost" element={<NewPost />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/user-news/:id" element={<DetailNewsByUser />} />
-        <Route path='/sign-in' element={<SignIn />}></Route>
-        <Route path='/sign-up' element={<SignUp />}></Route>
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

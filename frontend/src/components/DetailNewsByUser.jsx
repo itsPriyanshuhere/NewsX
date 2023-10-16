@@ -63,26 +63,25 @@ const DetailNewsByUser = () => {
         <div className="px-8 py-2">
           <p className="text-lg font-thin">{details.description}</p>
         </div>
-        <div className="flex justify-end items-center px-8 py-2">
-          <div className="flex items-center space-x-4">
+        <div className="flex justify-end items-center px-8 py-2 gap-4">
+          <div className="flex items-center gap-1">
+            <span className="text-2xl text-red-500">{likes}</span>
             <button onClick={handleLike} className="text-3xl text-red-500 hover:text-red-600">
               <AiOutlineHeart />
             </button>
-            <span className="text-2xl text-red-500">{likes}</span>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-1">
+            <span className="text-2xl text-blue-300">{details.comments?.length}</span>
             <button onClick={handleClick} className="text-3xl text-blue-300 hover:text-blue-400">
               <FaRegCommentDots />
             </button>
-            <span className="text-2xl text-blue-300">{details.comments?.length}</span>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center gap-1">
+            <span className="text-2xl text-black">{reportNum}</span>
             <button onClick={handleReport} className="text-3xl text-black hover:text-red-500">
               <MdReportGmailerrorred />
             </button>
-            <span className="text-2xl text-black">{reportNum}</span>
           </div>
-
         </div>
         {showInputBox && (
           <div className="flex items-center space-x-4 my-4">
