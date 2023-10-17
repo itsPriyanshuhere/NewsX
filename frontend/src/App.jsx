@@ -11,6 +11,7 @@ import Navbar from "./containers/navbar";
 import DetailNewsByUser from "./components/DetailNewsByUser";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import CategoryNews from "./components/CategoryNews";
 
 export default function App() {
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/userforum" element={<UserForum />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/newpost" element={<NewPost />} />
+        <Route path="/category/:keyword" element={<CategoryNews />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/user-news/:id" element={<DetailNewsByUser />} />

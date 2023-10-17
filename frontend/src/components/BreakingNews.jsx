@@ -10,18 +10,17 @@ import { Autoplay, Pagination } from 'swiper/modules';
 
 const BreakingNews = () => {
 
-   const [headlines,setHeadlines] = useState([]);
+  //  const [headlines,setHeadlines] = useState([]);
 
-    const getHeadlines = async () => {
-        const res = await axios.get(`${server}/api/v1/headlines`);
-        setHeadlines(res.data.data);
-    }
+  //   const getHeadlines = async () => {
+  //       const res = await axios.get(`${server}/api/v1/headlines`);
+  //       setHeadlines(res.data.data);
+  //   }
 
-    useEffect(()=>{
-        getHeadlines();
-    },[]);
+  //   useEffect(()=>{
+  //       getHeadlines();
+  //   },[]);
 
-/*
     const headlines = [
         {
             uuid:1,
@@ -48,7 +47,7 @@ const BreakingNews = () => {
             description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor iaculis dapibus. Donec vel nunc vel nunc ultricies congue. Duis id ex nisl. Morbi in diam dictum, aliquam erat fermentum, porta sapien. Vivamus eget pulvinar mi. Vivamus imperdiet varius erat, eget accumsan ipsum tincidunt at. Donec dictum molestie dui, quis hendrerit leo venenatis nec. "
         },
     ]
-*/
+
   return (
     <div className='w-full bg-white h-auto text-center lg:text-start'>
       <div className='lg:flex lg:flex-row'>
