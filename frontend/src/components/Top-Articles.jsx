@@ -2,15 +2,21 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { server } from '../main';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Spinner from './Spinner.jsx';
 
 const Headlines = () => {
   const [ans, setAns] = useState([]);
+  const [loading,setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`${server}/api/v1/top-article`).then(function (res) {
       setAns(res.data.articles);
+      setLoading(false);
     })
   }, []);
+
+  if(loading) return <Spinner message="Wait a sec while we fetch some top news for you"/>
 
   return (
     <div>

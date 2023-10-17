@@ -3,20 +3,26 @@ import { useEffect, useState } from "react";
 import { server } from '../main';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useParams } from "react-router-dom";
+import Spinner from "./Spinner";
 
 const CategoryNews = () => {
 
   const keyword = useParams();  
   const [ans, setAns] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const getCategoryNews = async () => {
+      setLoading(true);
       const res = await axios.post(`${server}/api/v1/search-article`,keyword)
-        setAns(res.data.data);
+      setAns(res.data.data);
+      setLoading(false);
   }
 
   useEffect(() => {
     getCategoryNews();
   }, []);
+
+  if(loading) return <Spinner message={`Bringing some fresh news for you`} />
 
   return (
     <div>

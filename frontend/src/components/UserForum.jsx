@@ -1,17 +1,25 @@
+/* eslint-disable react/jsx-key */
+
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { server } from '../main';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 
 const UserForum = () => {
   const [ans, setAns] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`${server}/api/v1/allpostednews`).then(function (res) {
       setAns(res.data.news);
+      setLoading(false);
     })
   }, []);
+
+  if(loading) return <Spinner message="Some news brought to you by our very own website users." />
 
   return (
     <div>

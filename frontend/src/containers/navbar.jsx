@@ -23,7 +23,7 @@ function Navbar() {
   return (
     <nav>
       <div className="flex justify-between items-center p-4">
-        <h1 className="text-4xl tracking-wide font-thin border-r-2 border-double text-white border-black">
+        <h1 className="text-4xl tracking-wide pr-4 font-thin border-r-2 text-white border-white">
           <NavLink to="/">News<span className="font-bold text-red-500">X</span></NavLink>
         </h1>
         {showMenu ? (

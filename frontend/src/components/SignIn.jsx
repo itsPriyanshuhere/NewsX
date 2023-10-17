@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import axios from 'axios';
 import { useAuth } from "../context/auth";
 import { server } from "../main";
+import Toast, {Toaster} from 'react-hot-toast';
 
 const SignIn = () => {
 

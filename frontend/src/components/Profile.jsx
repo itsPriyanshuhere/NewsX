@@ -2,9 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { server } from "../main";
 import { useAuth } from "../context/auth";
+import Spinner from "./Spinner";
 
 const Profile = () => {
   const [auth] = useAuth();
+  const [loading, setLoading] = useState(false);
 
   const randomImage =
     "https://source.unsplash.com/1600x900/?nature,photography,technology,water,food,travel";
@@ -13,11 +15,15 @@ const Profile = () => {
   const [userPosts, setUserPosts] = useState([]);
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`${server}/api/v1/userpostednews`).then(function (res) {
       setAns(res.data);
       setUserPosts(res.data.userId.post);
+      setLoading(false);
     });
   }, [auth.user]);
+
+  if(loading) return <Spinner message="Your details are on the way" />
 
   return (
     <div className="bg-black p-4 text-white min-h-screen flex flex-col justify-center items-center">
