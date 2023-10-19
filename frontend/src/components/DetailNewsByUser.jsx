@@ -51,7 +51,7 @@ const DetailNewsByUser = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="bg-white h-auto w-2/3 text-center border rounded-md shadow-lg p-4">
+      <div className="bg-white h-auto lg:w-2/3 text-center border rounded-md shadow-lg p-4">
         <h2 className="text-3xl font-semibold text-red-500 mb-4">{details.title}</h2>
         <div className="p-4">
           <img
