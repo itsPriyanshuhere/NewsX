@@ -1,6 +1,7 @@
 import newsModel from "../models/newsModel.js";
 import userModel from "../models/userModel.js";
 
+// this will post a comment on a posted news by user.
 export const postComment = async (req,res) => {
     try {
         const {id} = req.params;
@@ -26,6 +27,7 @@ export const postComment = async (req,res) => {
     }
 };
 
+// this will report a post published by an user.
 export const reportController = async (req,res) => {
     try {
         const {id} = req.params;
@@ -54,6 +56,7 @@ export const reportController = async (req,res) => {
     }
 };
 
+// this will like or unlike a post published by an user.
 export const likeController = async (req,res) => {
     try {
         const {id} = req.params;

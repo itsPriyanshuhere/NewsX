@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// News Schema
 const schema = mongoose.Schema({
     title : {
         type : String,

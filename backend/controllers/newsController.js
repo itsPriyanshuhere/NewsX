@@ -1,6 +1,7 @@
 import newsModel from "../models/newsModel.js";
 import userModel from "../models/userModel.js";
 
+// it will help user to create a new news post
 export const createNewsPost = async (req,res) => {
     try {
         //photo to be added
@@ -32,6 +33,7 @@ export const createNewsPost = async (req,res) => {
     }
 };
 
+// this will fetch all posted news by different users.
 export const getAllNews = async (req,res) => {
     try {
         const news = await newsModel.find({}).sort({createdAt:-1});
@@ -48,6 +50,7 @@ export const getAllNews = async (req,res) => {
     }
 };
 
+// this will fetch all news posted by signed in user.
 export const getUserNews = async (req,res) => {
     try {
         const userId = await userModel.findById(req.user._id).populate('post');
@@ -64,6 +67,7 @@ export const getUserNews = async (req,res) => {
     }
 };
 
+// this will fetch detail of a posted news.
 export const getNewsDetails = async (req,res) => {
     try{
         const {id} = req.params;

@@ -7,6 +7,7 @@ import newsRoute from "./routes/newsRoute.js";
 import apiRoute from "./routes/apiRoute.js";
 const app = express();
 
+// help to read .env file
 dotenv.config({
     path:"./config/config.env",
 });
@@ -16,11 +17,13 @@ const allowedOrigins = [
   'http://localhost:5173'
 ];
 
+// allows cross original server request
 app.use(cors({
   origin:allowedOrigins,
   credentials:true,
 }));
 
+// mongodb database connection
 main().catch(err => console.log(err));
 
 async function main() {
@@ -28,8 +31,10 @@ async function main() {
   console.log(`MongoDB connection successfull`)
 }
 
+// helps to read json data
 app.use(express.json());
 
+// initial routes from user, news post and given api's
 app.use("/api/v1",userRoute);
 app.use("/api/v1",newsRoute);
 app.use("/api/v1",apiRoute);

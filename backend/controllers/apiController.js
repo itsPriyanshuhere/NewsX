@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+// this will fetch top news headlines from given api.
 export const getHeadlines = async (req,res) => {
     try{
         const response = await axios.get(process.env.HEADLINE_URL, {
@@ -22,6 +23,7 @@ export const getHeadlines = async (req,res) => {
     }
 };
 
+// this will fetch top news articles from given api.
 export const getTopArtciles = async (req,res) => {
     try {
         const response = await axios.get(process.env.TOP_ARTICLE_URL, {
@@ -42,6 +44,7 @@ export const getTopArtciles = async (req,res) => {
     }
 };
 
+// this will fetch top news articles using given search keyword from given api.
 export const searchNewsResults = async (req,res) => {
     try {
         const {keyword} = req.body;

@@ -21,33 +21,6 @@ const BreakingNews = () => {
         getHeadlines();
     },[]);
 
-    // const headlines = [
-    //     {
-    //         uuid:1,
-    //         title : "flower1",
-    //         image_url : "https://images.ctfassets.net/hrltx12pl8hq/5ZjPpfAhn1rZWeopnHiXb/3e1b9a709297905672a0d24eac94a873/thumb_nov22_03.jpg",
-    //         description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor iaculis dapibus. Donec vel nunc vel nunc ultricies congue. Duis id ex nisl. Morbi in diam dictum, aliquam erat fermentum, porta sapien. Vivamus eget pulvinar mi. Vivamus imperdiet varius erat, eget accumsan ipsum tincidunt at. Donec dictum molestie dui, quis hendrerit leo venenatis nec. "
-    //     },
-    //     {
-    //         uuid:12,
-    //         title : "flower2",
-    //         image_url : "https://images.ctfassets.net/hrltx12pl8hq/5ZjPpfAhn1rZWeopnHiXb/3e1b9a709297905672a0d24eac94a873/thumb_nov22_03.jpg",
-    //         description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor iaculis dapibus. Donec vel nunc vel nunc ultricies congue. Duis id ex nisl. Morbi in diam dictum, aliquam erat fermentum, porta sapien. Vivamus eget pulvinar mi. Vivamus imperdiet varius erat, eget accumsan ipsum tincidunt at. Donec dictum molestie dui, quis hendrerit leo venenatis nec. "
-    //     },
-    //     {
-    //         uuid:3,
-    //         title : "flower3",
-    //         image_url : "https://images.ctfassets.net/hrltx12pl8hq/5ZjPpfAhn1rZWeopnHiXb/3e1b9a709297905672a0d24eac94a873/thumb_nov22_03.jpg",
-    //         description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor iaculis dapibus. Donec vel nunc vel nunc ultricies congue. Duis id ex nisl. Morbi in diam dictum, aliquam erat fermentum, porta sapien. Vivamus eget pulvinar mi. Vivamus imperdiet varius erat, eget accumsan ipsum tincidunt at. Donec dictum molestie dui, quis hendrerit leo venenatis nec. "
-    //     },
-    //     {
-    //         uuid:4,
-    //         title : "flower4",
-    //         image_url : "https://images.ctfassets.net/hrltx12pl8hq/5ZjPpfAhn1rZWeopnHiXb/3e1b9a709297905672a0d24eac94a873/thumb_nov22_03.jpg",
-    //         description : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor iaculis dapibus. Donec vel nunc vel nunc ultricies congue. Duis id ex nisl. Morbi in diam dictum, aliquam erat fermentum, porta sapien. Vivamus eget pulvinar mi. Vivamus imperdiet varius erat, eget accumsan ipsum tincidunt at. Donec dictum molestie dui, quis hendrerit leo venenatis nec. "
-    //     },
-    // ]
-
   return (
     <div className='w-full bg-white h-auto text-center lg:text-start'>
       <div className='lg:flex lg:flex-row'>

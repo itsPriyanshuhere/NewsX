@@ -2,6 +2,7 @@ import { comparePassword, hashPassword } from "../helper/authHelper.js";
 import userModel from "../models/userModel.js";
 import JWT from "jsonwebtoken";
 
+// this will register a user on our website.
 export const registerUser = async (req,res) => {
     try {
         const {name,email,password,answer} = req.body;
@@ -52,6 +53,7 @@ export const registerUser = async (req,res) => {
     }
 };
 
+// this will login in a user by checking the credentials.
 export const loginUser = async (req,res) => {
     try {
         const {email,password} = req.body;
@@ -99,6 +101,7 @@ export const loginUser = async (req,res) => {
     }
 };
 
+// this will fetch user profile details.
 export const getUserProfile = async (req,res) => {
     try {
         const userId = await userModel.findById(req.user._id);
